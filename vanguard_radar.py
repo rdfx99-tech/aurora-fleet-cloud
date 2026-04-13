@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 st.set_page_config(page_title="VANGUARD Command Center", layout="wide")
 
 # 🔐 Cloud Database: ลิงก์ Supabase (อย่าลืมเปลี่ยน [YOUR-PASSWORD] เป็นรหัสผ่านจริงนะครับ)
-DB_URL = "postgresql://postgres:[Callerid@toy]@db.hozckyqkmnksavvmpsak.supabase.co:5432/postgres"
+DB_URL = "postgresql://postgres:Callerid@toy@db.hozckyqkmnksavvmpsak.supabase.co:5432/postgres"
 engine = create_engine(DB_URL)
 
 # 📥 1. ฟังก์ชันดึงข้อมูลรถปัจจุบัน (Live)
