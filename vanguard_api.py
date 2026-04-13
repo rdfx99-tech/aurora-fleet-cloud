@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # 🔐 นำลิงก์ Supabase ของพี่เอสมาใส่ตรงนี้ (อย่าลืมเปลี่ยน [YOUR-PASSWORD] เป็นรหัสผ่านจริง)
-DB_URL = "postgresql://postgres:Callerid@toy@db.hozckyqkmnksavvmpsak.supabase.co:5432/postgres"
+DB_URL = "postgresql://postgres:edED65565656@db.hozckyqkmnksavvmpsak.supabase.co:5432/postgres"
 
 # 📥 ฟังก์ชันเชื่อมต่อ Database
 def get_db_connection():
