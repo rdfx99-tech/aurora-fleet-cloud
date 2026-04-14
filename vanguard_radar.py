@@ -111,11 +111,13 @@ if not df.empty:
     if scatter_layer:
         layers_to_render.append(scatter_layer)
 
-    # 🛠️ ประกอบร่างแผนที่ (ฉบับแก้ไข: ใช้แผนที่ฟรี ไม่ต้องใช้ Token)
+    # 🛠️ ประกอบร่างแผนที่ (เวอร์ชันปลดล็อกหน้าจอขาว)
     r = pdk.Deck(
         layers=layers_to_render, 
         initial_view_state=view_state, 
-        # 👇 เปลี่ยนมาใช้สไตล์ Dark Matter ของ CartoDB แทนครับ (ไม่ต้องใช้กุญแจ)
+        # 👇 บรรทัดทองคำ: บอกระบบว่า "ไม่ต้องไปหา Mapbox นะ"
+        map_provider=None, 
+        # 👇 บรรทัดนี้คือใช้แผนที่ฟรีของ CartoDB ครับ
         map_style='https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
         tooltip={
             "html": "<b>Fleet ID:</b> {fleet_id}<br/>"
