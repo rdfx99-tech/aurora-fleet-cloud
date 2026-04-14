@@ -31,7 +31,7 @@ def load_history_by_date(fleet_id, target_date):
         # ปรับ Query ให้ใช้ PostgreSQL Syntax (timestamp::date) เพื่อความแม่นยำบน Cloud
         query = f"""
             SELECT lat, lon 
-            FROM fleet_history 
+            FROM fleet_locations 
             WHERE fleet_id='{fleet_id}' 
             AND timestamp::date = '{target_date}'
             ORDER BY timestamp ASC
