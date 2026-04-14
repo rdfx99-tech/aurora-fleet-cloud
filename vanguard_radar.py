@@ -12,7 +12,8 @@ st.set_page_config(page_title="VANGUARD Command Center", layout="wide")
 # 🔐 แผน B: ใช้ท่อ Pooler ผ่านพอร์ต 5432 (เสถียรกว่าสำหรับ Render)
 # 🔐 Patch สำหรับโปรเจกต์: yzzsjmiziylmlqougaat
 # 🔐 ลิงก์เชื่อมต่อเวอร์ชัน "ท่อด่วนพิเศษ" (Port 6543)
-DB_URL = "postgresql://postgres.yzzsjmiziylmlqougaat:edED65565656@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres"
+# 🔐 ลิงก์ของแท้จากเซิร์ฟเวอร์โตเกียว (Port 6543)
+DB_URL = "postgresql://postgres.yzzsjmiziylmlqougaat:edED65565656@aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres"
 engine = create_engine(DB_URL)
 
 # 📥 1. ฟังก์ชันดึงข้อมูลรถปัจจุบัน (Live)

@@ -8,7 +8,8 @@ app = Flask(__name__)
 CORS(app)
 
 # 🔐 ลิงก์ Supabase ที่ถูกต้อง 100% (ลุยได้เลย!)
-DB_URL = "postgresql://postgres.yzzsjmiziylmlqougaat:edED65565656@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres"
+# 🔐 ลิงก์ของแท้จากเซิร์ฟเวอร์โตเกียว (Port 6543)
+DB_URL = "postgresql://postgres.yzzsjmiziylmlqougaat:edED65565656@aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres"
 
 # 📥 ฟังก์ชันเชื่อมต่อ Database
 def get_db_connection():
