@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import psycopg2
@@ -6,7 +7,7 @@ import datetime
 app = Flask(__name__)
 CORS(app)
 
-# 🔐 นำลิงก์ Supabase ของพี่เอสมาใส่ตรงนี้ (อย่าลืมเปลี่ยน [YOUR-PASSWORD] เป็นรหัสผ่านจริง)
+# 🔐 ลิงก์ Supabase ที่ถูกต้อง 100% (ลุยได้เลย!)
 DB_URL = "postgresql://postgres.yzzsjmiziylmlqougaat:edED65565656@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres"
 
 # 📥 ฟังก์ชันเชื่อมต่อ Database
@@ -47,7 +48,7 @@ def update_location():
     
     now = datetime.datetime.now()
     
-    # 📌 บันทึกพิกัดล่าสุด (PostgreSQL ใช้ %s แทน ?)
+    # 📌 บันทึกพิกัดล่าสุด
     c.execute('''INSERT INTO live_fleet (fleet_id, lat, lon, speed, last_update) 
                  VALUES (%s, %s, %s, %s, %s)
                  ON CONFLICT(fleet_id) DO UPDATE SET 
@@ -70,4 +71,6 @@ if __name__ == '__main__':
     print("=========================================")
     print("🚀 VANGUARD CLOUD API GATEWAY 🟢 ONLINE")
     print("=========================================")
-    app.run(host='0.0.0.0', port=5000)
+    # 🌟 อัปเดตให้รองรับ Render Dynamic Port ทะลุฉลุยแน่นอน!
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
